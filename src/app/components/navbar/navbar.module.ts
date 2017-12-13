@@ -8,9 +8,9 @@ import { NavbarComponent } from './navbar.component';
 @NgModule({
   imports: [
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
     MatIconModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   declarations: [
     NavbarComponent
