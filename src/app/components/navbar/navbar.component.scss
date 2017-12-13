@@ -8,6 +8,24 @@
   right: 0;
 }
 
+.nav-container {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+}
+
 .sidenav-container {
   flex: 1;
+}
+
+.sidenav-toggle {
+  position: absolute;
+}
+
+.orcasmart-logo {
+  display: block;
+  max-width: 50px;
+  max-height: 50px;
+  overflow: hidden;
+  margin: auto;
 }

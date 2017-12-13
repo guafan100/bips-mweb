@@ -1,12 +1,18 @@
-<mat-toolbar color="primary">
-  <button mat-button (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-</mat-toolbar>
-
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="push" opened="true">Sidenav content</mat-sidenav>
+  <mat-sidenav #sidenav mode="push" opened="true">
+    <div class="nav-container">
+      
+    </div>
+  </mat-sidenav>
   <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-button (click)="sidenav.toggle()" class="sidenav-toggle">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="orcasmart-logo">
+        <img src="assets/images/orcasmart_logo.png" width="50"/>
+      </div>
+    </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
