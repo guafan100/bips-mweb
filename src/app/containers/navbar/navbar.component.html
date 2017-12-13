@@ -4,6 +4,12 @@
       <mat-grid-list cols="3" rowHeight="100px">
         <mat-grid-tile>
           <div class="icon">
+            <mat-icon>home</mat-icon>
+            Home
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="icon">
             <mat-icon>note</mat-icon>
             Notes
           </div>
@@ -18,12 +24,6 @@
           <div class="icon">
             <mat-icon>store</mat-icon>
             Orcashop
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <div class="icon">
-            <mat-icon>track_changes</mat-icon>
-            Track
           </div>
         </mat-grid-tile>
         <mat-grid-tile>
@@ -61,6 +61,8 @@
         <img src="assets/images/orcasmart_logo.png" width="50"/>
       </div>
     </mat-toolbar>
-    <ng-content></ng-content>
+    <div class="ng-content-wrapper">
+      <ng-content></ng-content>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
