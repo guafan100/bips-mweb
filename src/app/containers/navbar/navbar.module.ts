@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar.component';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NavbarComponent } from './navbar.component';
     MatSidenavModule,
     MatIconModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    RouterModule
   ],
   declarations: [
     NavbarComponent
