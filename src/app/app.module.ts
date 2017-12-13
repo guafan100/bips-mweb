@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
-import { AppNavbarModule } from './components/app-navbar/app-navbar.module';
+import { NavbarModule } from './components/navbar/navbar.module';
 import { NotesModule } from './containers/notes/notes.module';
 import { HomeModule } from './containers/home/home.module';
 import { AppRoutingModule } from './core/app-routing.module';
@@ -13,11 +14,12 @@ import { AppRoutingModule } from './core/app-routing.module';
     AppComponent,
   ],
   imports: [
-    AppNavbarModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
     BrowserModule,
+    NavbarModule,
     NotesModule,
-    HomeModule,
-    AppRoutingModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
