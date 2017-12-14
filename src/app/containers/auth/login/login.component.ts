@@ -14,15 +14,16 @@ export class LoginComponent {
     private authService: AuthService
   ){}
   onSubmit(){
-    
+
     this.authService.login({
       "email": this.user.email,
       "password": this.user.password
     }).subscribe(
       data => {
-        console.log(data);
+        localStorage.setItem('orcasmart_access_token', data.token);
       },
       err => {
+        console.log('error');
         console.log(err);
       }
     )

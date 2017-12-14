@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  ORCA_API: 'http://166.62.84.115:31415/api/v1/'
+  ORCA_API: 'http://166.62.84.115:11802/api/v1/'
 };
