@@ -11,6 +11,6 @@ export class AuthService {
   ) {}
 
   login(credential): Observable<any> {
-    return this.http.post(environment.ORCA_API_ENDPOINT + 'login', credential);
+    return this.http.post(environment.ORCA_API + 'login', credential);
   }
 }
