@@ -10,11 +10,12 @@ import { AuthService } from 'app/core/services/auth.service';
 
 export class LoginComponent {
   user = new User();
+
   constructor(
     private authService: AuthService
   ){}
-  onSubmit(){
 
+  onSubmit(){
     this.authService.login({
       "email": this.user.email,
       "password": this.user.password

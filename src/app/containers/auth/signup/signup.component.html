@@ -1,1 +1,16 @@
-signup
+<div class="login-banner">
+  <p> WELCOME JOIN ORCASMART </p>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input type="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" [(ngModel)]="user.password" name="password">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password Confirmation" name="passwordConfirmation">
+  </mat-form-field>
+  <button mat-raised-button color="accent">Sign Up</button>
+</form>
+<a class="login-btn" routerLink="/login">Login</a>
