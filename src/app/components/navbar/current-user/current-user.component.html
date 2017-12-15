@@ -1,1 +1,21 @@
+<!-- <mat-sidenav-container>
+    <mat-sidenav  #sidenav mode="side" opened="true"></mat-sidenav>
 {{ auth.orcaAuthenticated }}
+</mat-sidenav-container> -->
+<mat-toolbar color="accent">
+    <mat-toolbar-row class="first-row">
+        <span>
+            <div class="default" *ngIf="!this.auth.orcaAuthenticated || !this.auth.currentUser.avatar_url; else show_picture"> 
+                    <i class="material-icons mat-72">account_circle</i>
+            </div>
+            <ng-template #show_picture>
+                <img src= "{{auth.currentUser?.avatar_url}}" />
+            </ng-template>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row >
+        <span class="email">{{ auth.currentUser?.email }}</span>
+        <span class="logout"> <mat-icon class="logout">eject</mat-icon></span>
+    </mat-toolbar-row>
+</mat-toolbar>
+      
