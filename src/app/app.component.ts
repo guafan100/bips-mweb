@@ -12,7 +12,7 @@ import * as AuthActions from 'app/core/actions/auth.action';
 })
 
 export class AppComponent implements OnInit {
-  auth: fromAuthReducer.State;
+  auth$: Observable<fromAuthReducer.State>;
 
   constructor(
     private store: Store<StoreState>,
@@ -20,11 +20,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.store.select('auth').subscribe(
-      (state: fromAuthReducer.State) => {
-        this.auth = state;
-      }
-    );
+    this.auth$ = this.store.select('auth');
 
     if(this.authService.getOrcaToken()){
       this.authService.getCurrentUser().subscribe(

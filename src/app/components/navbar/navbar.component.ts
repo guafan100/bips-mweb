@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
+import * as fromAuthReducer from 'app/core/reducers/auth.reducer';
 
 @Component({
   selector: 'navbar',
@@ -6,10 +7,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['navbar.component.scss']
 })
 
-export class NavbarComponent {
-  @Input() auth: any;
+export class NavbarComponent implements OnChanges {
+  @Input() auth: fromAuthReducer.State;
 
   constructor(){
+
+  }
+
+  ngOnChanges(){
 
   }
 }

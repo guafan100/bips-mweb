@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +20,7 @@ import { reducers } from './core/reducers';
     AppComponent,
   ],
   imports: [
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     BrowserModule,
