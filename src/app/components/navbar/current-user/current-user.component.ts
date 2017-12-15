@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { User } from 'app/core/models';
+import * as fromAuthReduer from 'app/core/reducers/auth.reducer';
 
 @Component({
   selector: 'current-user',
@@ -8,7 +9,7 @@ import { User } from 'app/core/models';
 })
 
 export class CurrentUserComponent implements OnChanges {
-  @Input() user: User;
+  @Input() auth: fromAuthReduer.State;
 
   constructor() {
 
