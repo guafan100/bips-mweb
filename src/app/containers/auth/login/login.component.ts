@@ -25,7 +25,7 @@ export class LoginComponent {
       "password": this.user.password
     }).subscribe(
       data => {
-        localStorage.setItem('orcasmart_access_token', data.token);
+        this.authService.setOrcaToken(data.token);
         this.store.dispatch(new AuthActions.LoginSuccess());
       },
       err => {

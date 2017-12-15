@@ -10,12 +10,24 @@ export class AuthService {
     private http: HttpClient,
   ) {}
 
-  login(credential): Observable<any> {
+  public getOrcaToken(): string {
+    return localStorage.getItem('orcasmart_access_token');
+  }
+
+  public setOrcaToken(token): void {
+    localStorage.setItem('orcasmart_access_token', token);
+  }
+
+  public login(credential): Observable<any> {
     return this.http.post(environment.ORCA_API + 'login', credential);
   }
 
-  signup(credential): Observable<any> {
+  public signup(credential): Observable<any> {
     return this.http.post(environment.ORCA_API + 'signup', credential);
+  }
+
+  public getCurrentUser(): Observable<any> {
+    return this.http.get(environment.ORCA_API + 'me');
   }
 
 }
