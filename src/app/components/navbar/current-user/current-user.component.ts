@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { User } from 'app/core/models';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'current-user',
