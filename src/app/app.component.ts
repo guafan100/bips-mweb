@@ -4,6 +4,7 @@ import { StoreState, User } from 'app/core/models';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from 'app/core/services/auth.service';
 import * as fromAuthReducer from 'app/core/reducers/auth.reducer';
+import * as AuthActions from 'app/core/actions/auth.action';
 
 @Component({
   selector: 'app-root',
@@ -28,8 +29,7 @@ export class AppComponent implements OnInit {
     if(this.authService.getOrcaToken()){
       this.authService.getCurrentUser().subscribe(
         data => {
-          console.log('success');
-          console.log(data);
+          this.store.dispatch(new AuthActions.SetCurrentUser(data.user));
         },
         err => {
           console.log('error');
