@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { User } from 'app/core/models/user';
+import { Store } from '@ngrx/store';
+import { StoreState } from 'app/core/models/store-state';
 import { AuthService } from 'app/core/services/auth.service';
+import * as AuthActions from 'app/core/actions/auth.action';
 
 @Component({
   selector: 'login',
@@ -12,7 +15,8 @@ export class LoginComponent {
   user = new User();
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private store: Store<StoreState>
   ){}
 
   onSubmit(){
@@ -22,6 +26,7 @@ export class LoginComponent {
     }).subscribe(
       data => {
         localStorage.setItem('orcasmart_access_token', data.token);
+        this.store.dispatch(new AuthActions.LoginSuccess());
       },
       err => {
         console.log('error');

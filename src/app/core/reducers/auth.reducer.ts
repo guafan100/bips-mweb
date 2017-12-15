@@ -30,14 +30,22 @@ export function AuthReducer(state = initialState, action){
 
     case authActions.SET_CURRENT_USER:
       return {
+        ...state,
         orcaAuthenticated: true,
         currentUser: action.payload
       }
 
     case authActions.DELETE_CURRENT_USER:
       return {
+        ...state,
         orcaAuthenticated: false,
         currentUser: null
+      }
+
+    case authActions.BUSINESS_LOGIN_SUCCESS:
+      return {
+        ...state,
+        businessAuthenticated: true
       }
 
     default:

@@ -7,7 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
-import { NavbarModule } from './containers/navbar/navbar.module';
+import { NavbarModule } from './components/navbar/navbar.module';
 
 import { reducers } from './core/reducers';
 
@@ -21,7 +21,7 @@ import { reducers } from './core/reducers';
     BrowserModule,
     NavbarModule,
     HttpClientModule,
-    StoreModule.forRoot({ reducers }),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25 //  Retains last 25 states
     })
